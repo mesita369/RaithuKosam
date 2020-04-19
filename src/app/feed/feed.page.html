@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="pageTitle">RAITHU KOSAM</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content no-padding>
+  <!-- name of segment to access segment on runtime -->
+  <div [ngSwitch]="segments">
+    <!-- First segment -->
+    <div *ngSwitchCase="'segmentOne'">
+      <img class="banner" src="assets/images/all-types.jpg">
+      <!-- <ion-fab vertical="center" horizontal="end">
+        <ion-fab-button>
+          <ion-icon name="cart"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> -->
+      <ion-grid no-padding>
+        <!-- single row contain 2 columns of equal lenght due to size=6  -->
+        <ion-row no-padding>
+          <ion-col *ngFor="let item of items" size="6" no-padding>
+            <ion-card no-padding>
+              <img src="{{item.img}}" class = "itemImg" alt="Image not loading" />
+              <ion-text>
+                <p>
+                  <b>{{item.text}}</b>
+                </p>
+              </ion-text>
+              <ion-row align-items-center>
+                <ion-col size="6" no-padding>
+                  <ion-text>
+                    <p>₹ {{item.price}}</p>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6" class="ion-text-end">
+                  <ion-button class="btn-view">View</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- Second segment -->
+    <div *ngSwitchCase="'segmentTwo'">
+      <ion-grid no-padding>
+        <!-- single row contain 2 columns of equal lenght due to size=6  -->
+        <ion-row no-padding>
+          <ion-col *ngFor="let item of items" size="6" no-padding>
+            <ion-card no-padding>
+              <img src="{{item.img}}" class = "itemImg" alt="Image not loading" />
+              <ion-text>
+                <p>
+                  <b>{{item.text}}</b>
+                </p>
+              </ion-text>
+              <ion-row align-items-center>
+                <ion-col size="6" no-padding>
+                  <ion-text>
+                    <p>₹ {{item.price}}</p>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6" class="ion-text-end">
+                  <ion-button class="btn-view">View</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- Third segment -->
+    <div *ngSwitchCase="'segmentThree'">
+      <ion-grid no-padding>
+        <!-- single row contain 2 columns of equal lenght due to size=6  -->
+        <ion-row no-padding>
+          <ion-col *ngFor="let item of items" size="6" no-padding>
+            <ion-card no-padding>
+              <img src="{{item.img}}" class = "itemImg" alt="Image not loading" />
+              <ion-text>
+                <p>
+                  <b>{{item.text}}</b>
+                </p>
+              </ion-text>
+              <ion-row align-items-center>
+                <ion-col size="6" no-padding>
+                  <ion-text>
+                    <p>₹ {{item.price}}</p>
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6" class="ion-text-end">
+                  <ion-button class="btn-view">View</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+
+
+
+
+<ion-footer>
+  <!-- segment footer button  -->
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="segmentOne" checked>
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="segmentTwo">
+      <ion-icon name="heart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="segmentThree">
+      <ion-icon name="pin"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>
